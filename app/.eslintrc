@@ -1,0 +1,16 @@
+{
+    "root": true,
+    "globals": {
+      "$nuxt": true
+    },
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "extends": [
+      "@nuxtjs"
+    ],
+    "rules": {
+      "vue/component-name-in-template-casing": ["error", "kebab-case"]
+    }
+}

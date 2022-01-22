@@ -1,7 +1,10 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'challenge-aerolab',
+    titleTemplate: (titleChunk) => {
+      const titleDefault = 'Ezshop';
+      return titleChunk ? `${titleChunk} - ${titleDefault}` : titleDefault;
+    },
     htmlAttrs: {
       lang: 'en'
     },
@@ -18,6 +21,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/scss/main.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
