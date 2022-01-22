@@ -3,7 +3,7 @@
     <h1>Bienvenido</h1>
     <nuxt-link
       :to="{
-        name: 'articles'
+        name: 'articles',
       }"
     >
       Ver Articulos
@@ -13,11 +13,11 @@
 
 <script>
 export default {
-  name: 'IndexPage'
-}
+  name: "IndexPage",
+};
 </script>
 
 <style lang="scss" scoped>
-#page-home{
+#page-home {
 }
 </style>

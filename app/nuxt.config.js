@@ -36,11 +36,14 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    ['@nuxtjs/eslint-module', {
+      fix: true
+    }]
   ],
-  
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    ['@nuxtjs/axios', { 
+    ['@nuxtjs/axios', {
       baseURL: process.env.API_URL,
       debug: process.env.NODE_ENV === "production" ? false : true,
     }],
