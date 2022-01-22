@@ -10,10 +10,9 @@ module.exports = {
     sourceType: "module"
   },
   extends: [
-    "prettier/vue",
+    "plugin:vue/vue3-recommended",
     "eslint:recommended",
-    "plugin:vue/recommended",
-    "plugin:nuxt/recommended",
+    "prettier/vue",
     "plugin:prettier/recommended",
   ],
   plugins: [],
