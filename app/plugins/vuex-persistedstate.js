@@ -1,8 +1,6 @@
 import vuexPersistedState from "vuex-persistedstate";
 export default ({ store }) => {
-    vuexPersistedState({
-    paths: [
-      "cart",
-    ],
+  vuexPersistedState({
+    paths: ["shopping-cart"],
   })(store);
 };

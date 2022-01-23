@@ -3,10 +3,10 @@
     <h1>Bienvenido</h1>
     <nuxt-link
       :to="{
-        name: 'articles',
+        name: 'products',
       }"
     >
-      Ver Articulos
+      Ver Productos
     </nuxt-link>
   </div>
 </template>
