@@ -1,18 +1,49 @@
+//  Base
+
+html {
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    margin: 0;
+  }
+}
+
+// Colors
+
+$Blue: #006DE3;
+$White: #FFFFFF;
+
 // Fonts
 
-/*@font-face {
-    font-family: 'SFProRegular';
+@font-face {
+    font-family: "SFProRegular";
     font-style: normal;
     font-weight: 400;
-    src: url('~assets/fonts/sf-pro/regulat.OTF')  format('truetype');
+    src: url("~assets/fonts/sf-pro/regular.OTF") format("truetype");
 }
 
 @font-face {
-    font-family: 'SemiBold';
+    font-family: "SFProSemiBold";
     font-style: normal;
     font-weight: 500;
-    src: url('~assets/fonts/sf-pro/semibold.OTF')  format('truetype');
+    src: url("~assets/fonts/sf-pro/semibold.OTF") format("truetype");
 }
-*/
-// Colors
 
+%sf-pro-regular {
+  font-family: "SFProRegular", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji", sans-serif !important;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+%sf-pro-semibold {
+  font-family: "SFProSemiBold", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji", sans-serif !important;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}

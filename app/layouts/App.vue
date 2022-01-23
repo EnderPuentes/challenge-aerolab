@@ -1,25 +1,21 @@
 <template>
-    <main id="app">
-        <TheHeader />
-        <Nuxt />
-        <TheFooter />
-    </main>
+  <main id="app">
+    <the-header />
+    <nuxt />
+  </main>
 </template>
 
 <script>
-import TheHeader from "~/components/TheHeader.vue";
-import TheFooter from "~/components/TheFooter.vue";
+import TheHeader from "~/components/Layouts/TheHeader.vue";
 export default {
-
-    components: {
-        TheHeader,
-        TheFooter,
-    }
-
+  components: {
+    TheHeader,
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-#app{
+#app {
+  @extend %sf-pro-regular;
 }
 </style>
