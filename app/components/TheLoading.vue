@@ -18,12 +18,13 @@ export default {
 
 <style lang="scss" scoped>
 .the-loading {
-  padding: 20px 0;
-  h2 {
-    @extend %helvetica-neue-medium;
-    font-size: 24px;
-    line-height: 24px;
-    color: $Black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  img {
+    width: 40px;
   }
 }
 </style>

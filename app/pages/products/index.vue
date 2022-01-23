@@ -7,6 +7,7 @@
         :key="`product-${index}`"
         :data="item"
       />
+      <the-loading v-if="loading" />
     </div>
   </div>
 </template>
@@ -14,12 +15,14 @@
 <script>
 import { mapGetters } from "vuex";
 import TheTitle from "~/components/TheTitle.vue";
+import TheLoading from "~/components/TheLoading.vue";
 import Module from "./partials/Module.vue";
 
 export default {
   name: "ProductsPage",
   components: {
     TheTitle,
+    TheLoading,
     Module,
   },
   layout: "App",
@@ -36,6 +39,9 @@ export default {
       title: "Almacén",
     };
   },
+  computed: {
+    ...mapGetters("products", ["items", "pagination"]),
+  },
   mounted() {
     window.onscroll = async () => {
       let scrollPosition =
@@ -50,9 +56,6 @@ export default {
         }
       }
     };
-  },
-  computed: {
-    ...mapGetters("products", ["items", "pagination"]),
   },
 };
 </script>
