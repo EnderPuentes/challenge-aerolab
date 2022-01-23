@@ -1,12 +1,16 @@
 <template>
   <div id="page-articles">
-    <h1>Articles</h1>
+    <the-title text="Almacén" />
   </div>
 </template>
 
 <script>
+import TheTitle from "~/components/TheTitle.vue";
 export default {
   name: "ArticlesPage",
+  components: {
+    TheTitle,
+  },
   layout: "App",
   head() {
     return {
