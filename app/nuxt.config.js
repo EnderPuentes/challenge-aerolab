@@ -1,4 +1,4 @@
-require('dotenv').config()
+require("dotenv").config()
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -21,6 +21,17 @@ export default {
     ]
   },
 
+  // Router
+
+  router: {
+    extendRoutes(routes, resolve) {
+      const newRoutes = routes.filter(
+        (route) => route.path.indexOf("partials") === -1
+      );
+      routes.splice(0, routes.length, ...newRoutes);
+    },
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     "~/assets/scss/main.scss"
@@ -36,18 +47,21 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    ['@nuxtjs/eslint-module', {
+    ["@nuxtjs/eslint-module", {
       fix: true
+    }],
+    ["@nuxtjs/style-resources", {
+      scss: "~/assets/scss/main.scss",
     }]
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    ['@nuxtjs/axios', {
+    ["@nuxtjs/axios", {
       baseURL: process.env.API_URL,
       debug: process.env.NODE_ENV === "production" ? false : true,
     }],
-    ['@nuxtjs/dotenv', { /* module options */ }],
+    ["@nuxtjs/dotenv", { /* module options */ }],
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'ArticlesPage',
+  name: "ArticlesPage",
   layout: "App",
   head() {
     return {
