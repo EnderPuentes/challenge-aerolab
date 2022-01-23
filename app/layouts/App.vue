@@ -1,7 +1,7 @@
 <template>
   <main id="app">
     <the-header />
-    <Nuxt />
+    <nuxt />
   </main>
 </template>
 

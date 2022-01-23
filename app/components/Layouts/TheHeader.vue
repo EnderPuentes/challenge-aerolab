@@ -1,18 +1,23 @@
 <template>
   <header>
     <the-container>
-      <logo />
+      <div class="header-container">
+        <logo />
+        <shopping-cart />
+      </div>
     </the-container>
   </header>
 </template>
 
 <script>
 import Logo from "./partials/Logo.vue";
+import ShoppingCart from "./partials/ShoppingCart.vue";
 import TheContainer from "~/components/TheContainer.vue";
 export default {
   name: "EzTheHeader",
   components: {
     Logo,
+    ShoppingCart,
     TheContainer,
   },
 };
@@ -27,5 +32,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 </style>
