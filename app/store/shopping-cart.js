@@ -54,7 +54,7 @@ export const getters = {
       price: state.items
         .map((item) => parseFloat(item.price * item.amount))
         .reduce((a, b) => a + b, 0),
-      amount: state.items.length,
+      amount: state.items.map((item) => item.amount).reduce((a, b) => a + b, 0),
     };
   },
 };
