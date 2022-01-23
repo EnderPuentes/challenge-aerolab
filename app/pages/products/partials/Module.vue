@@ -41,6 +41,15 @@ export default {
   max-width: calc(50% - 7.5px);
   border-radius: 3px;
   margin-bottom: 15px;
+  @media (min-width: 550px) {
+    max-width: calc(33.3% - 7.5px);
+  }
+  @media (min-width: 767px) {
+    max-width: calc(25% - 7.5px);
+  }
+  @media (min-width: 991px) {
+    max-width: calc(20% - 7.5px);
+  }
   .image {
     display: flex;
     justify-content: center;
