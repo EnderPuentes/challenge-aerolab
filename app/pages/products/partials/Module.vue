@@ -57,17 +57,30 @@ export default {
     .title {
       display: block;
       margin-bottom: 15px;
+      height: 40px;
       h5 {
         color: $Black;
         font-size: 14px;
         line-height: 20px;
         @extend %sf-pro-regular;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
     .price {
       display: flex;
       justify-content: center;
       align-items: center;
+      h6 {
+        font-size: 12px;
+        line-height: 12px;
+        color: $Black;
+        text-decoration: line-through;
+        margin-right: 6px;
+      }
       h3 {
         color: $Blue;
         font-size: 16px;

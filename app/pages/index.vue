@@ -1,19 +1,15 @@
 <template>
-  <div id="page-home">
-    <h1>Bienvenido</h1>
-    <nuxt-link
-      :to="{
-        name: 'products',
-      }"
-    >
-      Ver Productos
-    </nuxt-link>
-  </div>
+  <div id="page-home"></div>
 </template>
 
 <script>
 export default {
   name: "IndexPage",
+  mounted() {
+    this.$router.push({
+      name: "products",
+    });
+  },
 };
 </script>
 
