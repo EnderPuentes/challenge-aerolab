@@ -1,6 +1,6 @@
 <template>
   <div class="shopping-cart">
-    <span class="total">$&nbsp;{{ Number(total.price).toFixed(2) }}</span>
+    <span class="total">$&nbsp;{{ mixinFormatPrice(total.price) }}</span>
     <div class="icon">
       <img src="/images/shopping-cart.png" alt="Shopping Cart" />
       <span class="amount">{{ total.amount }}</span>

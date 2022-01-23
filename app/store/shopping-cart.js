@@ -1,5 +1,10 @@
 export const state = () => ({
-  items: [],
+  items: [
+    {
+      price: 1200,
+      amount: 3,
+    },
+  ],
 });
 
 export const mutations = {
