@@ -3,7 +3,15 @@
     <the-header />
     <main>
       <the-container>
-        <nuxt />
+        <template v-if="$nuxt.isOffline">
+          <div class="offline">
+            <img src="/images/offline.png" alt="Offline" />
+            <p>Parece que no tienes conexión a internet</p>
+          </div>
+        </template>
+        <template v-else>
+          <nuxt />
+        </template>
       </the-container>
     </main>
   </div>
@@ -26,5 +34,18 @@ export default {
   background-color: $Grey;
   min-height: 100vh;
   padding-top: 62px;
+  .offline {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    img {
+      width: 100px;
+    }
+    p {
+      margin: 15px 0;
+    }
+  }
 }
 </style>
