@@ -88,17 +88,17 @@ export default {
 .product-module {
   background-color: $White;
   width: 100%;
-  max-width: calc(50% - 7.5px);
+  max-width: calc(50% - 15px);
   border-radius: 3px;
-  margin-bottom: 15px;
+  margin: 0 7.5px 15px;
   @media (min-width: 550px) {
-    max-width: calc(33.3% - 7.5px);
+    max-width: calc(33.3% - 15px);
   }
   @media (min-width: 767px) {
-    max-width: calc(25% - 7.5px);
+    max-width: calc(25% - 15px);
   }
   @media (min-width: 991px) {
-    max-width: calc(20% - 7.5px);
+    max-width: calc(20% - 15px);
   }
   .image {
     position: relative;

@@ -64,9 +64,10 @@ export default {
 #page-products {
   .list {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
+    margin: 0 -7.5px;
   }
 }
 </style>
