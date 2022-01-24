@@ -13,13 +13,21 @@
         </h6>
         <h3>${{ mixinFormatPrice(data.price) }}</h3>
       </span>
+      <add-shopping-cart
+        :id-product="Number(data.id)"
+        :price-product="Number(data.price)"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import AddShoppingCart from "~/components/AddShoppingCart.vue";
 export default {
   name: "EzProductModule",
+  components: {
+    AddShoppingCart,
+  },
   props: {
     data: {
       type: Object,

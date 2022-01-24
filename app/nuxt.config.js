@@ -37,6 +37,7 @@ export default {
   plugins: [
     { src: "~/plugins/axios.js" },
     { src: "~/plugins/vue-mixin-common-methods.js" },
+    { src: "~/plugins/vuex-persistedstate", mode: "client" },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

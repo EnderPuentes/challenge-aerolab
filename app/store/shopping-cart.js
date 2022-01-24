@@ -1,10 +1,5 @@
 export const state = () => ({
-  items: [
-    {
-      price: 1200,
-      amount: 3,
-    },
-  ],
+  items: [],
 });
 
 export const mutations = {
@@ -24,26 +19,32 @@ export const mutations = {
 };
 
 export const actions = {
-  async update({ commit, state }, { action, itemNew }) {
-    const itemCurrent = state.items.find((item) => {
-      return item.id === itemNew.id;
+  async update({ commit, state }, { action, item }) {
+    const itemSC = state.items.find((it) => {
+      return it.id === item.id;
     });
-    if (!itemCurrent) {
-      await commit("SET_ITEM", itemNew);
+    if (!itemSC) {
+      await commit("ADD_ITEM", item);
     } else if (action === "add") {
-      if ((itemCurrent.amount = itemNew.amount > 0)) {
-        await commit("UPDATE_ITEM", itemNew.id, itemNew.amount);
+      if ((itemSC.amount = item.amount > 0)) {
+        await commit("UPDATE_ITEM", {
+          itemId: item.id,
+          amount: item.amount,
+        });
       } else {
-        await commit("REMOVE_ITEM", itemNew.id);
+        await commit("REMOVE_ITEM", item.id);
       }
     } else if (action === "update") {
-      if (itemNew.amount > 0) {
-        await commit("UPDATE_ITEM", itemNew.id, itemNew.amount);
+      if (item.amount > 0) {
+        await commit("UPDATE_ITEM", {
+          itemId: item.id,
+          amount: item.amount,
+        });
       } else {
-        await commit("REMOVE_ITEM", itemNew.id);
+        await commit("REMOVE_ITEM", item.id);
       }
     } else if (action === "remove") {
-      await commit("REMOVE_ITEM", itemNew.id);
+      await commit("REMOVE_ITEM", item.id);
     }
   },
 };
@@ -57,4 +58,5 @@ export const getters = {
       amount: state.items.map((item) => item.amount).reduce((a, b) => a + b, 0),
     };
   },
+  items: (state) => state.items,
 };

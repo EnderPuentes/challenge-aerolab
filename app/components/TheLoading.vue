@@ -7,12 +7,6 @@
 <script>
 export default {
   name: "EzTheLoading",
-  props: {
-    text: {
-      type: String,
-      required: true,
-    },
-  },
 };
 </script>
 
