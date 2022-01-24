@@ -64,7 +64,8 @@ export default {
     [
       "@nuxtjs/axios",
       {
-        baseURL: process.env.API_URL,
+        prefix: "/api",
+        proxy: true,
         debug: process.env.NODE_ENV === "production" ? false : true,
       },
     ],
@@ -74,6 +75,13 @@ export default {
         /* module options */
       },
     ],
+  ],
+
+  serverMiddleware: [
+    {
+      path: "/api",
+      handler: "~/api/index.js",
+    },
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
