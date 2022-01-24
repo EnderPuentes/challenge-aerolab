@@ -6,6 +6,7 @@
 export default {
   name: "IndexPage",
   mounted() {
+    console.log(this.$router.options.routes);
     this.$router.push({
       name: "products",
     });
