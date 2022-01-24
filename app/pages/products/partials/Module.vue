@@ -59,13 +59,17 @@ export default {
     max-width: calc(20% - 7.5px);
   }
   .image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
+    position: relative;
+    height: 148px;
+    width: 100%;
     img {
-      display: block;
-      width: 100%;
+      object-fit: contain;
+      object-position: center;
+      position: absolute;
+      width: calc(100% - 30px);
+      height: calc(100% - 30px);
+      left: 15px;
+      top: 15px;
     }
   }
   .text {

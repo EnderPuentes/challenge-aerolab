@@ -69,7 +69,7 @@ export default {
       max-width: 132px;
       height: 32px;
       background-color: $White;
-      padding: 9px;
+      padding: 9px 0;
       border: solid 1px $Blue;
       border-radius: 3px;
       text-align: center;
@@ -85,7 +85,7 @@ export default {
     align-items: center;
     input {
       display: block;
-      width: 68px;
+      width: calc(100% - 64px);
       height: 32px;
       background-color: $White;
       border: none;

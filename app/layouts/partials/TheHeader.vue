@@ -25,6 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 header {
+  z-index: 99;
   position: fixed;
   width: 100%;
   height: 62px;
