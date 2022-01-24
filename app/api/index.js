@@ -22,32 +22,22 @@ app.get("", async (req, res) => {
  */
 
 app.get("/products", async (req, res) => {
-  // Obtenemos los productos
   const responseProducts = await axios.get(req.url);
   const dataProducts = responseProducts.data;
-  // Obtenemos la cotización del dolár
   const responseDollar = await axios.get("dollar");
   const dataDollar = responseDollar.data;
-  // Modificamos el array
-  let products = [];
   dataProducts.products.forEach((product, index) => {
-    // Creamos una copia del item actual
     let item = dataProducts.products[index];
-    // Agregamos el precio original en pesos
     item.priceDollar = Number(
       parseFloat(product.price / dataDollar.rate).toFixed(2)
     );
-    // Agregamos el precio original en doláres
     item.originalPriceDollar = Number(
       parseFloat(product.originalPrice / dataDollar.rate).toFixed(2)
     );
-    // Reemplazamos la estension de la foto
     item.photo =
       product.photo.substr(0, product.photo.lastIndexOf(".")) + ".webp";
-    // Actualizamos el item actual con la copia modificada
     dataProducts.products[index] = item;
   });
-  // Retornamos la data
   res.send(dataProducts);
 });
 
@@ -66,7 +56,16 @@ app.get("/categories", async (req, res) => {
 
 app.get("/categories_tree", async (req, res) => {
   const response = await axios.get("categories");
-  res.send(response.data);
+  const data = response.data;
+  let orderTree = (list, parent_id) => {
+    return list
+      .filter((n) => n.parent_id == parent_id)
+      .map((n) => {
+        n.subcategories = orderTree(list, n.id);
+        return n;
+      });
+  };
+  res.send({ categories: orderTree(data.categories, null) });
 });
 
 /**
@@ -75,7 +74,7 @@ app.get("/categories_tree", async (req, res) => {
 
 app.get("/dollar", async (req, res) => {
   const response = await axios.get("dollar");
-  res.send(response.data);
+  res.send(response.data.categories);
 });
 
 module.exports = app;
