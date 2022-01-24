@@ -185,6 +185,12 @@ export default {
           font-size: 14px;
           line-height: 14px;
           color: $Blue;
+          cursor: inherit;
+          -moz-appearance: textfield;
+          &::-webkit-inner-spin-button,
+          &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+          }
         }
         button {
           display: block;
