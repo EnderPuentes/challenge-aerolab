@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 export default {
+  port: process.env.PORT || 3000,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: (titleChunk) => {
@@ -90,12 +91,12 @@ export default {
     cache: true,
     optimization: {
       splitChunks: {
-        chunks: 'async',
+        chunks: "async",
       },
     },
     babel: {
       compact: true,
-     },
+    },
     loaders: {
       sass: {
         implementation: require("sass"),
@@ -109,7 +110,7 @@ export default {
       vendor: true,
       commons: true,
       runtime: true,
-      layouts: true
+      layouts: true,
     },
   },
   /*
