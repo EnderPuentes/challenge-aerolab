@@ -16,7 +16,7 @@ Una vez que lo tengas listo, subilo a un repo de github/gitlab/bitbucket y pasan
 
 2) Utilizando **React**, implementá el diseño que creaste en el punto 1 consumiendo [la API del challenge](#Documentación). Podés usar cualquier framework o starter que gustes, como Create React App, Next.JS, o si tenés muchas ganas usar Vanilla directamente. Tenemos dos features para implementar:
 
-`Para el desarrollo general use Nuxtjs (Vue) que es el framekork con el que trabajo actualmente, es el equivalente a Nextjs en React`
+`Para el desarrollo general use Nuxtjs (Vue) que es el framework con el que trabajo actualmente, es el equivalente a Nextjs en React`
 
 * Hay un botón de mostrar más productos que debería cargar las páginas siguientes. Si querés podés agregar infinite scrolling para mejorar un poco más la UX.
 
@@ -28,7 +28,15 @@ Una vez que lo tengas listo, subilo a un repo de github/gitlab/bitbucket y pasan
 
 3) Queremos hacer una API específica de esta app que muestre la misma data de la API , pero con un par de modificaciones:
 
-`Desarrollé la api usando express y a su vez cambié la configuración de axios a proxy para que consuma la api local`
+`Desarrollé la api usando express y a su vez cambié la configuración de axios a proxy para que consuma la api local. Recursos: `
+
+`- https://aerolab-challenge-epuentes.herokuapp.com/api`
+`- https://aerolab-challenge-epuentes.herokuapp.com/api/products (?page= número de página)`
+`- https://aerolab-challenge-epuentes.herokuapp.com/api/slow/products (?page= número de página)`
+`- https://aerolab-challenge-epuentes.herokuapp.com/api/categories`
+`- https://aerolab-challenge-epuentes.herokuapp.com/api/categories_tree`
+`- https://aerolab-challenge-epuentes.herokuapp.com/api/dollar`
+
 
 * Debería sumar al modelo de datos los precios en dólares calculados con la cotización del día que sale en la API.
 
