@@ -63,6 +63,8 @@ b) Estaría muy bueno que la app nos avise cuando estamos sin conexión para no 
 a) El equipo de infraestructura nos pidió que nuestro proxy cargue los productos desde https://challenge-api.aerolab.co/slow/products , pero como el nombre indica, anda lentísimo y nos arruina la performance de la API. 
 Hay algo que puedas hacer en el proxy para que no nos afecte tanto? La verdad es que los productos no cambian súper seguido.
 
+`Implementé manejo de cache para el recurso de 1 hora`
+
 b) Por otra parte, la lista de categorías de https://challenge-api.aerolab.co/categories viene en una lista plana. Nos vendría muy bien a futuro tener un endpoint `/category_tree` a la API que devuelva las categorías en forma de árbol, tomando como referencia el siguiente formato:
 
 `Implementé ordenamiento por recursión`
