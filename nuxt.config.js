@@ -66,7 +66,7 @@ export default {
       {
         prefix: "/api",
         proxy: true,
-        debug: process.env.NODE_ENV === "production" ? false : true,
+        debug: process.env.porcess. === "production" ? false : true,
       },
     ],
     [
@@ -85,5 +85,45 @@ export default {
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    analyze: process.NODE_ENV === "production" ? false : true,
+    cache: true,
+    optimization: {
+      splitChunks: {
+        chunks: 'async',
+      },
+    },
+    babel: {
+      compact: true,
+     },
+    loaders: {
+      sass: {
+        implementation: require("sass"),
+      },
+      scss: {
+        implementation: require("sass"),
+      },
+    },
+    splitChunks: {
+      pages: true,
+      vendor: true,
+      commons: true,
+      runtime: true,
+      layouts: true
+    },
+  },
+  /*
+   ** Render configuration
+   ** See https://nuxtjs.org/api/configuration-render/
+   */
+  render: {
+    http2: {
+      push: true,
+      pushAssets: (req, res, publicPath, preloadFiles) =>
+        preloadFiles
+          .filter((f) => f.asType === "script" && f.file === "runtime.js")
+          .map((f) => `<${publicPath}${f.file}>; rel=preload; as=${f.asType}`),
+    },
+    asyncScripts: true,
+  },
 };
