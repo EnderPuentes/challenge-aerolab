@@ -26,18 +26,27 @@ app.get("/products", async (req, res) => {
   const dataProducts = responseProducts.data;
   const responseDollar = await axios.get("dollar");
   const dataDollar = responseDollar.data;
-  dataProducts.products.forEach((product, index) => {
-    let item = dataProducts.products[index];
-    item.priceDollar = Number(
-      parseFloat(product.price / dataDollar.rate).toFixed(2)
-    );
-    item.originalPriceDollar = Number(
-      parseFloat(product.originalPrice / dataDollar.rate).toFixed(2)
-    );
-    item.photo =
-      product.photo.substr(0, product.photo.lastIndexOf(".")) + ".webp";
-    dataProducts.products[index] = item;
-  });
+  dataProducts.products = dataProducts.products
+    .filter((product) => {
+      // Filtramos los productos del último mes
+      const dateLimit = new Date();
+      dateLimit.setMonth(dateLimit.getMonth() - 1);
+      return new Date(product.updatedAt) > dateLimit;
+    })
+    .map((product) => {
+      // Cambiamos la extensión de la foto
+      product.photo =
+        product.photo.substr(0, product.photo.lastIndexOf(".")) + ".webp";
+      // Calculamos el precio en dolares
+      product.priceDollar = Number(
+        parseFloat(product.price / dataDollar.rate).toFixed(2)
+      );
+      // Calculamos el precio original en dolares
+      product.originalPriceDollar = Number(
+        parseFloat(product.originalPrice / dataDollar.rate).toFixed(2)
+      );
+      return product;
+    });
   res.send(dataProducts);
 });
 
@@ -57,6 +66,7 @@ app.get("/categories", async (req, res) => {
 app.get("/categories_tree", async (req, res) => {
   const response = await axios.get("categories");
   const data = response.data;
+  // Ordenamos recursivamente la data en forma de arbol
   let orderTree = (list, parent_id) => {
     return list
       .filter((n) => n.parent_id == parent_id)
