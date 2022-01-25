@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import Logo from "./partials/Logo.vue";
-import ShoppingCart from "./partials/ShoppingCart.vue";
+import Logo from "./Logo.vue";
+import ShoppingCart from "./ShoppingCart.vue";
 import TheContainer from "./TheContainer.vue";
 export default {
   name: "EzTheHeader",
