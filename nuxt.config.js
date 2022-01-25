@@ -97,14 +97,6 @@ export default {
     babel: {
       compact: true,
     },
-    loaders: {
-      sass: {
-        implementation: require("sass"),
-      },
-      scss: {
-        implementation: require("sass"),
-      },
-    },
     splitChunks: {
       pages: true,
       vendor: true,
