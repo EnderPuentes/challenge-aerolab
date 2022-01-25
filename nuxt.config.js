@@ -66,7 +66,7 @@ export default {
       {
         prefix: "/api",
         proxy: true,
-        debug: process.env.NODE_ENV. === "production" ? false : true,
+        debug: process.env.NODE_ENV === "production" ? false : true,
       },
     ],
     [
