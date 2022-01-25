@@ -66,7 +66,7 @@ export default {
       {
         prefix: "/api",
         proxy: true,
-        debug: process.env.porcess. === "production" ? false : true,
+        debug: process.env.NODE_ENV. === "production" ? false : true,
       },
     ],
     [
@@ -86,7 +86,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    analyze: process.NODE_ENV === "production" ? false : true,
+    analyze: process.env.NODE_ENV === "production" ? false : true,
     cache: true,
     optimization: {
       splitChunks: {
